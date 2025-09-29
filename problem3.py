@@ -2,8 +2,8 @@
 Problem 3: Number Analysis
 Analyze a list of numbers provided by the user.
 """
+from logging import raiseExceptions
 
-"""added a comment here"""
 
 def get_numbers_from_user():
     """
@@ -20,7 +20,18 @@ def get_numbers_from_user():
         # TODO: Check if user typed 'done'
         # TODO: Try to convert to float and add to list
         # TODO: Handle invalid input gracefully
-        pass
+        user_text = input("Please enter a number (float or int) or done if finished \n")
+
+        try:
+            float_number = float(user_text)
+            numbers.append(float_number)
+        except:
+            if user_text.lower() == "done":
+                break
+            else:
+                print("Please enter a valid number.")
+
+
 
     return numbers
 
