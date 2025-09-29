@@ -56,7 +56,7 @@ def count_lines(filename):
     file = open(filename, 'r')
     total_line = 0
     for line in file:
-        total_line += len(line.split())
+        total_line += 1
     file.close()
     return total_line
 
