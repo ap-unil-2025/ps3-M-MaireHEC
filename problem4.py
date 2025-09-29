@@ -124,6 +124,15 @@ def word_frequency(filename):
     # TODO: Convert to lowercase
     # TODO: Remove punctuation (use string.punctuation)
     # TODO: Count frequency of each word
+    file = open(filename, 'r')
+    for line in file:
+        line = line.strip()
+        for word in line.split():
+            word = word.lower()
+            if word not in frequency:
+                frequency[word] = 1
+            else:
+                frequency[word] += 1
 
     return frequency
 
