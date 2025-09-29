@@ -2,6 +2,8 @@
 Problem 4: File Word Counter
 Process text files and perform various analyses.
 """
+import string
+
 
 def create_sample_file(filename="sample.txt"):
     """
@@ -97,10 +99,14 @@ def find_longest_word(filename):
     # Hint: You might need to remove punctuation
     file = open(filename, 'r')
     longest_word = ""
+
     for line in file:
-        line = line.strip()
-        if len(line) > len(longest_word):
-            longest_word = line
+        line.strip()
+        for word in line.split():
+            word = word.strip(string.punctuation)
+            if len(word) > len(longest_word):
+                longest_word = word
+
     return longest_word
 
 
