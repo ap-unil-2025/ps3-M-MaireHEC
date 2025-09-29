@@ -2,7 +2,7 @@
 Problem 3: Number Analysis
 Analyze a list of numbers provided by the user.
 """
-from logging import raiseExceptions
+
 
 
 def get_numbers_from_user():
