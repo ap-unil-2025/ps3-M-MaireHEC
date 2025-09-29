@@ -32,7 +32,12 @@ def count_words(filename):
     """
     # TODO: Open file and count words
     # Hint: Use split() to separate words
-    pass
+    file = open(filename, 'r')
+    total_words = 0
+    for line in file:
+        total_words += len(line.split())
+    file.close()
+    return total_words
 
 
 def count_lines(filename):
