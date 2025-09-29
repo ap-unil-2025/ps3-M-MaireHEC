@@ -35,7 +35,7 @@ def fahrenheit_to_celsius(fahrenheit):
     return (fahrenheit - 32) *5/9
 
 
-def temperature_converter(value:float, unit:str):
+def temperature_converter():
     """
     Interactive temperature converter.
     Ask user for:
@@ -45,16 +45,29 @@ def temperature_converter(value:float, unit:str):
     """
     print("Temperature Converter")
     print("-" * 30)
+    while True:
+        value = input("Enter Temperature \n")
+        try:
+            value = float(value)
+            break
+        except ValueError:
+            print("Please enter a number.")
+
+    while True:
+        unit = input("Enter Unit: C or F\n")
+        unit = unit.upper()
+        if unit == "C" or unit == "F":
+            break
+        else:
+            print("Please enter a valid unit.")
 
     if isinstance(value, float) or isinstance(value, int):
         if unit == "C":
+            print(celsius_to_fahrenheit(value))
             return celsius_to_fahrenheit(value)
-        elif unit == "F":
-            return fahrenheit_to_celsius(value)
         else:
-            print("Invalid unit")
-    else:
-        print("Not convertable")
+            print(fahrenheit_to_celsius(value))
+            return fahrenheit_to_celsius(value)
 
     # TODO: Implement the interactive converter
     # Remember to:
