@@ -3,6 +3,8 @@ Problem 3: Number Analysis
 Analyze a list of numbers provided by the user.
 """
 
+"""added a comment here"""
+
 def get_numbers_from_user():
     """
     Get numbers from user until they type 'done'.
@@ -55,7 +57,7 @@ def analyze_numbers(numbers):
 
     return analysis
 
-
+""" another comment because """
 def display_analysis(analysis):
     """
     Display the analysis in a formatted way.
